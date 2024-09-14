@@ -102,18 +102,18 @@ swoop: swoop {
             , <&key_physical_attrs 100 100  300  400       0    0    0>
             , <&key_physical_attrs 100 175  550  475       3000 650  425>
             , <&key_physical_attrs 100 175  675  425       3000    650    425>
-            , <&key_physical_attrs 100 175  950  425       -3000   1300  425>
-            , <&key_physical_attrs 100 175  1075  475       -3000   1300  425>
+            , <&key_physical_attrs 100 175  950  290     (-3000)    1300  425>
+            , <&key_physical_attrs 100 175  1075  340     (-3000)    1300  425>
             , <&key_physical_attrs 100 100 1300  400       0    0    0>
             , <&key_physical_attrs 100 100 1400  400       0    0    0>
             , <&key_physical_attrs 100 100  700  775      3000     650    425>
               , <&key_physical_attrs 100 100  825  750      3000     650    425>
             , <&key_physical_attrs 100 100  700  650       3000 650  425>
             , <&key_physical_attrs 100 100  825  625       3000    650    425>
-            , <&key_physical_attrs 100 100  800  490       -3000   1300  425>
-            , <&key_physical_attrs 100 100  925  515       -3000   1300  425>
-            , <&key_physical_attrs 100 100  800  615       -3000   1300  425>
-            , <&key_physical_attrs 100 100  925  640       -3000   1300  425>
+            , <&key_physical_attrs 100 100  800  490      (-3000)   1300  425>
+            , <&key_physical_attrs 100 100  925  515      (-3000)    1300  425>
+            , <&key_physical_attrs 100 100  800  615      (-3000)   1300  425>
+            , <&key_physical_attrs 100 100  925  640   (-3000)   1300  425>
             ;
     };
 
