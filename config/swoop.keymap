@@ -16,8 +16,9 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 &lt {
+    tapping-term-ms = <200>;
     flavor = "balanced";
-    tapping-term-ms = <180>;
+    quick-tap-ms = <170>;
 };
 
 / {
