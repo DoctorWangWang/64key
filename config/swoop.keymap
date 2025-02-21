@@ -153,7 +153,7 @@
             label = "HOTKEY";
             bindings = <
 &kp ESC  &kp N3       &kp F7  &kp F8  &kp F9  &kp F10  &bt BT_CLR    &kp N3        &kp N3       &kp N3  &bt BT_SEL 0  &bt BT_SEL 0
-&kp ESC  &reset       &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none         &reset       &none   &none         &none
+&kp ESC  &kp ESC       &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none         &kp ESC      &none   &none         &none
 &kp ESC  &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &out OUT_BLE  &none         &bootloader  &none   &none         &none
                       &none   &none   &none   &none    &none         &none         &none        &none
                       &none   &none   &none   &none    &kp NUMBER_3  &kp NUMBER_3  &mo 3        &mo 3      &none
