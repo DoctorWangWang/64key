@@ -3,11 +3,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT 0
@@ -17,6 +14,11 @@
 #define MSE     4
 
 #define AS(keycode) &as LS(keycode) keycode
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+};
 
 / {
     behaviors {
@@ -51,31 +53,13 @@
     };
 
     macros {
-        macro_phone: macro_phone {
-            // 1351
-
-            label = "MACRO_PHONE";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N1 &kp N3 &kp N5 &kp N1>;
-        };
-
-        macro_email_q: macro_email_q {
-            // 2894512440@qq.com
-
-            label = "MACRO_EMAIL_QQ";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N2 &kp N8 &kp N9 &kp N4 &kp N5 &kp N1 &kp N2 &kp N4 &kp N4 &kp N0 &kp AT &kp Q &kp Q &kp DOT &kp C &kp O &kp M>;
-        };
-
         macro_email_g: macro_email_g {
             // 135115
 
             compatible = "zmk,behavior-macro";
             label = "MACRO_EMAIL_GMAIL";
             #binding-cells = <0>;
-            bindings = <&kp N1 &kp N3 &kp N5 &kp N1 &kp N1 &kp N5>;
+            bindings = <&kp N1 &kp NUMBER_1 &kp N5 &kp N1 &kp N1 &kp N5>;
         };
     };
 
@@ -119,11 +103,11 @@
         default_layer {
             label = "DEFAULT";
             bindings = <
-&lt 3 ESC             &kp Q  &kp W      &kp E      &kp R            &kp T      &kp Y       &kp U        &kp I      &kp O      &kp P     &mt LEFT_SHIFT MINUS
-&mt LEFT_SHIFT ENTER  &kp A  &kp S      &kp D      &kp F            &kp G      &kp H       &kp J        &kp K      &kp L      &kp SEMI  &kp SQT
-&kp CAPS              &kp Z  &kp X      &kp C      &kp V            &kp B      &kp N       &kp M        &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
-                             &kp LC(C)  &kp LC(V)  &kp BSPC         &kp SPACE  &lt 2 LEFT  &lt 1 RIGHT  &kp LBKT   &kp RBKT
-                             &kp GRAVE  &kp LALT   &mt LCTRL LSHFT  &lt 1 DEL  &kp UP      &kp EQUAL    &kp DOWN   &kp RCTRL
+&lt 3 ESC             &kp Q  &kp W      &kp E      &kp R            &kp T        &kp Y       &kp U        &kp I      &kp O      &kp P     &mt LEFT_SHIFT MINUS
+&mt LEFT_SHIFT ENTER  &kp A  &kp S      &kp D      &kp F            &kp G        &kp H       &kp J        &kp K      &kp L      &kp SEMI  &kp SQT
+&kp CAPS              &kp Z  &kp X      &kp C      &kp V            &kp B        &kp N       &kp M        &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+                             &kp LC(C)  &kp LC(V)  &lt 1 BSPC       &lt 2 SPACE  &lt 2 LEFT  &lt 1 RIGHT  &kp LBKT   &kp RBKT
+                             &kp GRAVE  &kp LALT   &mt LCTRL LSHFT  &lt 1 DEL    &kp UP      &kp EQUAL    &kp DOWN   &kp RCTRL
             >;
         };
 
@@ -153,10 +137,30 @@
             label = "HOTKEY";
             bindings = <
 &kp ESC  &kp N3       &kp F7  &kp F8  &kp F9  &kp F10  &bt BT_CLR    &kp N3        &kp N3       &kp N3  &bt BT_SEL 0  &bt BT_SEL 0
-&kp ESC  &kp ESC       &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none         &kp ESC      &none   &none         &none
+&kp ESC  &kp ESC      &kp F4  &kp F5  &kp F6  &kp F11  &out OUT_USB  &none         &kp ESC      &none   &none         &none
 &kp ESC  &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &out OUT_BLE  &none         &bootloader  &none   &none         &none
                       &none   &none   &none   &none    &none         &none         &none        &none
-                      &none   &none   &none   &none    &kp NUMBER_3  &kp NUMBER_3  &mo 3        &mo 3      &none
+                      &none   &none   &none   &none    &kp NUMBER_3  &kp NUMBER_3  &mo 3        &mo 3
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
