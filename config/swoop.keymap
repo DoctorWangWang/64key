@@ -83,6 +83,15 @@
         };
     };
 
+    macros {
+        m1: m1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_1>;
+            label = "M1";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
